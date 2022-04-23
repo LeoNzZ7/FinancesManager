@@ -17,6 +17,7 @@ export const App = () => {
   const [expense, SetExpense] = useState(0);
 
   const theme = useAppSelector(state => state.theme);
+  const searchItem = useAppSelector(state => state.searchItem);
 
   useEffect(() => {
     setFilteredList(FilterListByMonth(list, currentMonth));
@@ -27,16 +28,42 @@ export const App = () => {
     let expenseCount = 0;
 
     for (let i in filteredList) {
-      if (categories[filteredList[i].category].expense) {
+      if (searchItem.title === filteredList[i].title && searchItem.category === filteredList[i].category) {
+        if (categories[filteredList[i].category].expense) {
+          expenseCount += filteredList[i].value;
+        } else {
+          incomeCount += filteredList[i].value;
+        } 
+      } else if (searchItem.title === filteredList[i].title) {
+        if (categories[filteredList[i].category].expense) {
+          expenseCount += filteredList[i].value;
+        } else {
+          incomeCount += filteredList[i].value;
+        } 
+      } else if (searchItem.category === filteredList[i].category) {
+        if (categories[filteredList[i].category].expense) {
+          expenseCount += filteredList[i].value;
+        } else {
+          incomeCount += filteredList[i].value;
+        } 
+      } else if (searchItem.title === '' && searchItem.category === '') {
+        if (categories[filteredList[i].category].expense) {
+          expenseCount += filteredList[i].value;
+        } else {
+          incomeCount += filteredList[i].value;
+        } 
+      }
+    }
+
+  }, [filteredList, searchItem.title, searchItem.category]);
+
+  /*
+     if (categories[filteredList[i].category].expense) {
         expenseCount += filteredList[i].value;
       } else {
         incomeCount += filteredList[i].value;
       } 
-    }
-    SetIncome(incomeCount);
-    SetExpense(expenseCount);
-
-  }, [filteredList]);
+  */
 
   const handleMonthChange = (newMonth: string) => {
     setCurrentMonth(newMonth);

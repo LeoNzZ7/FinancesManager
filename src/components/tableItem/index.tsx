@@ -6,9 +6,10 @@ import { useAppSelector } from '../../redux/hooks/useAppSelector';
 
 type Props = {
     item: Item;
+    handleDeleteItem: (str: string) => void;
 }
 
-export const TableItem = ({ item }: Props) => {
+export const TableItem = ({ item, handleDeleteItem }: Props) => {
     const searchItem = useAppSelector(state => state.searchItem);
 
     const formatedValue = (value: number) => {
@@ -16,6 +17,10 @@ export const TableItem = ({ item }: Props) => {
         let formatValue = parseFloat(fixedValue);
         return formatValue.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     }
+
+    const deleteItem = ({title} : Item) => {
+        handleDeleteItem(title);
+    };
 
     return (
         <>
@@ -33,6 +38,9 @@ export const TableItem = ({ item }: Props) => {
                         {formatedValue(item.value)}
                     </c.Value>
                 </c.TableColumn>
+                <c.TableColumn>
+                    <div onClick={() => deleteItem(item)} className='removeItem'>❌</div>
+                </c.TableColumn>
             </c.TableLine>
         } {item.title === searchItem.title && searchItem.category.length === 0 &&
             <c.TableLine>   
@@ -47,6 +55,9 @@ export const TableItem = ({ item }: Props) => {
                     <c.Value color={categories[item.category].expense ? '#ff0000' : '#008000'}>
                         {formatedValue(item.value)}
                     </c.Value>
+                </c.TableColumn>
+                <c.TableColumn>
+                    <div onClick={() => deleteItem(item)} className='removeItem'>❌</div>
                 </c.TableColumn>
             </c.TableLine>
         } {searchItem.category === item.category && searchItem.title.length === 0 &&
@@ -63,6 +74,9 @@ export const TableItem = ({ item }: Props) => {
                         {formatedValue(item.value)}
                     </c.Value>
                 </c.TableColumn>
+                <c.TableColumn>
+                    <div onClick={() => deleteItem(item)} className='removeItem'>❌</div>
+                </c.TableColumn>
             </c.TableLine>
         } {searchItem.category === item.category && searchItem.title === item.title &&
             <c.TableLine>   
@@ -77,6 +91,9 @@ export const TableItem = ({ item }: Props) => {
                     <c.Value color={categories[item.category].expense ? '#ff0000' : '#008000'}>
                         {formatedValue(item.value)}
                     </c.Value>
+                </c.TableColumn>
+                <c.TableColumn>
+                    <div onClick={() => deleteItem(item)} className='removeItem'>❌</div>
                 </c.TableColumn>
             </c.TableLine>
             }

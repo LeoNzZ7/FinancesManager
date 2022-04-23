@@ -22,7 +22,9 @@ export const InputArea = ({onAdd}: Props) => {
             title: title,
             value: parseInt(value)
         }
-        
+        setCategory('');
+        setTitle('');
+        setDate('');
         onAdd(newItem);
     }
     

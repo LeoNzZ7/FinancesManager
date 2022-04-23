@@ -46,12 +46,12 @@ export const App = () => {
         } else {
           incomeCount += filteredList[i].value;
         } 
-      } else if (searchItem.category === '' && searchItem.category === '') {
+      } else if (searchItem.category === '' && searchItem.title === '') {
         if (categories[filteredList[i].category].expense) {
           expenseCount += filteredList[i].value;
         } else {
           incomeCount += filteredList[i].value;
-        } 
+        }  
       }
     }
     
@@ -70,6 +70,16 @@ export const App = () => {
     setList(newList)
   };
 
+  const handleDeleteItem = (title: string) => {
+
+    let newlist: Item[] = list.filter((item: Item) => {
+      if (item.title != title)
+        return item;
+    });
+
+    setList(newlist);
+  }
+
   return (
     <c.Container theme={theme}>
       <c.Header theme={theme}>
@@ -81,7 +91,7 @@ export const App = () => {
       <c.Body>
         <InfoArea income={income} expense={expense} onMonthChange={handleMonthChange} currentMonth={currentMonth} />
         <InputArea onAdd={handleAddItem} />
-        <TableArea list={filteredList} />
+        <TableArea deleteItem={handleDeleteItem} list={filteredList} />
       </c.Body>
     </c.Container>
   )

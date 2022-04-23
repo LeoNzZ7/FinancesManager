@@ -1,3 +1,7 @@
+* {
+  transition: all ease 0.25s;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;

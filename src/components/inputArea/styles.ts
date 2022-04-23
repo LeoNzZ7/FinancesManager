@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
-export const Container = styled.div`
+export const Container = styled.div<{theme: string}>`
     padding: 20px;
     box-shadow: 0px 0px 5px #ccc;
-    background-color: #fff;
+    background-color: ${props => props.theme.status === 'light' ? '#fff' : '#000'};
     border-radius: 15px;
     padding: 20px;
     margin-top: 20px;
@@ -17,9 +17,10 @@ export const Container = styled.div`
         border-right: 0;
         border-left: 0;
         outline: 0;
+        background-color: transparent;
 
         ::placeholder {
-            color: #000;
+            color: ${props => props.theme.status === 'light' ? '#000' : '#fff'};
         }
     };
 
@@ -39,6 +40,7 @@ export const Container = styled.div`
         border: 1px solid #ccc;
         width: 30%;
         border-right: 0;
+        color: ${props => props.theme.status === 'light' ? '#000' : '#fff'};
     }
 
     select {
@@ -48,10 +50,13 @@ export const Container = styled.div`
         padding: 10px
         outline: 0;
         border-right: 0;
+        color: ${props => props.theme.status === 'light' ? '#000' : '#fff'};
+        background-color: ${props => props.theme.status === 'light' ? '#fff' : '#000'};
     };
 
     .option {
-        background-color: #fff;
+        background-color: ${props => props.theme.status === 'light' ? '#fff' : '#000'};
+        color: ${props => props.theme.status === 'light' ? '#000' : '#fff'};
     }
 
     button {

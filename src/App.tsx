@@ -7,6 +7,7 @@ import { categories, items } from './data/data';
 import { useState, useEffect } from 'react';
 import { getCurrentMonth, FilterListByMonth } from './helpers/dateFilter';
 import { ThemeSwitcher } from './components/themeSwitcher';
+import { useAppSelector } from './redux/hooks/useAppSelector';
 
 export const App = () => {  
   const [list, setList] = useState<Item[]>(items);
@@ -14,6 +15,8 @@ export const App = () => {
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
   const [income, SetIncome] = useState(0);
   const [expense, SetExpense] = useState(0);
+
+  const theme = useAppSelector(state => state.theme);
 
   useEffect(() => {
     setFilteredList(FilterListByMonth(list, currentMonth));
@@ -37,17 +40,17 @@ export const App = () => {
 
   const handleMonthChange = (newMonth: string) => {
     setCurrentMonth(newMonth);
-  }
+  };
 
   const handleAddItem = (item: Item) => {
     let newList = [...list];
     newList.push(item);
     setList(newList)
-  }
+  };
 
   return (
-    <c.Container>
-      <c.Header>
+    <c.Container theme={theme}>
+      <c.Header theme={theme}>
         <c.HeaderArea>
           <c.HeaderText>Gestor de Finanças</c.HeaderText>
           <ThemeSwitcher />

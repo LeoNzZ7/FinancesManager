@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div<{theme: string}>`
     display: flex;
-    background-color: #fff;
+    background-color: ${props => props.theme.status === 'light' ? '#fff' : '#000'};
     box-shadow: 0px 0px 5px #ccc;
     border-radius: 15px;
     margin-top: -40px;
@@ -10,10 +10,11 @@ export const Container = styled.div`
     align-items: center;
 `;
 
-export const MonthArea = styled.div`
+export const MonthArea = styled.div<{theme: string}>`
     flex: 1;
     display: flex;
     align-items: center;
+    color: ${props => props.theme.status === 'light' ? '#000' : '#fff'};
 `
 
 export const MonthArrow = styled.div`

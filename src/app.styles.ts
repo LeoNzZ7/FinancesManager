@@ -1,21 +1,24 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-    
+export const Container = styled.div<{theme: string}>`
+    background-color:  ${props => props.theme.status === 'light' ? '#0089ff' : '#000'};
+    min-height: 900px;
+    height: 100%;
+    max-height: 1000vh;
 `;
 
-export const Header = styled.div`
-    background-color: #0089ff;
+export const Header = styled.div<{theme: string}>`
+    background-color:  ${props => props.theme.status === 'light' ? '#0089ff' : '#000'};
     display: flex;
     align-items: center;
-    height: 170px;
     justify-content: center;
+    color: #fff;
+    height: 170px
 `;
 
 export const HeaderArea = styled.div`
     margin: auto;
     max-width: 980px;
-    background-color: #0089ff;
     display: flex;
     align-items: start;
     justify-content: center;
@@ -24,7 +27,6 @@ export const HeaderArea = styled.div`
 export const HeaderText = styled.h1`
     margin: 0;
     padding: 0;
-    color: #fff;
     height: 65%;
     padding-bottom: 30px;
     text-align: start;

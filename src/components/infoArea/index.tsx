@@ -13,6 +13,7 @@ type Props = {
 
 export const InfoArea = ({currentMonth, onMonthChange, income, expense,}: Props) => {
     const searchItem = useAppSelector(state => state.searchItem);
+    const theme = useAppSelector(state => state.theme);
 
     const handlePrevMonth = () => {
         let [year, month] = currentMonth.split('-');
@@ -28,15 +29,15 @@ export const InfoArea = ({currentMonth, onMonthChange, income, expense,}: Props)
     };
 
     return (
-        <c.Container>
-            <c.MonthArea>
+        <c.Container theme={theme}>
+            <c.MonthArea theme={theme}>
                 <c.MonthArrow onClick={handlePrevMonth} >⬅️</c.MonthArrow>
                 <c.MonthTitle>{formatCurrentMonth(currentMonth)}</c.MonthTitle>
                 <c.MonthArrow onClick={handleNextMonth} >➡️</c.MonthArrow>
             </c.MonthArea>
             <c.ResumeArea>
-                <ResumeItem title='Receitas' value={income} />
-                <ResumeItem title='Despesas' value={expense}  />
+                <ResumeItem title='Receitas' color={'#008000'} value={income} />
+                <ResumeItem title='Despesas' color={'#ff0000'} value={expense}  />
                 <ResumeItem title='Balanço geral' color={(income - expense) < 0 ? '#ff0000' : '#008000'} value={income - expense}  />
             </c.ResumeArea>
         </c.Container>

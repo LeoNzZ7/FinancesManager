@@ -1,6 +1,7 @@
 import { Item } from '../../types/types'
 import { useState } from 'react'
 import * as c from './styles'
+import { useAppSelector } from '../../redux/hooks/useAppSelector'
 
 type Props = {
     onAdd: (item: Item) => void
@@ -11,6 +12,8 @@ export const InputArea = ({onAdd}: Props) => {
     const [category, setCategory] = useState('');
     const [value  , setValue] = useState('');
     const [date, setDate] = useState('');
+
+    const theme = useAppSelector(state => state.theme);
 
     const handleAddEvent = () => {
         let newItem = {
@@ -24,7 +27,7 @@ export const InputArea = ({onAdd}: Props) => {
     }
     
     return (
-        <c.Container>
+        <c.Container theme={theme} >
             <input type='text' value={title} onChange={e => setTitle(e.target.value)} className='inputText' placeholder='Digite o nome da operação que você deseja adicionar' />
             <input type='text' onChange={e => setValue(e.target.value)} className='inputNumber' placeholder='Valor da operação' />
             <input type='date' className='inputDate' value={date} onChange={e => setDate(e.target.value)} />

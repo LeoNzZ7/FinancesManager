@@ -1,4 +1,5 @@
 import * as c from './styles'
+import { useAppSelector } from '../../redux/hooks/useAppSelector';
 
 type Props = {
     title: string;
@@ -17,7 +18,7 @@ export const ResumeItem = ({title, value, color}: Props) => {
         <div>
             <c.Container>
                 <c.Title>{title}</c.Title>
-                <c.Info color={color} >{formatedValue(value)}</c.Info>
+                <c.Info color={color}>{formatedValue(value)}</c.Info>
             </c.Container>
         </div>
     )

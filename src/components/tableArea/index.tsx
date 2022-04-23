@@ -23,14 +23,12 @@ export const TableArea = ({list}: Props ) => {
         dispatch(setCategory(category))
     }, [title, category]);
 
-    console.log(searchItem.category, searchItem.title)
-
     return (
         <c.Container theme={theme} >
             <c.SearchArea  theme={theme} >
                 <input type='text' value={title} onChange={e => setTitleSearch(e.target.value)} placeholder='Qual o nome da operçao que deseja buscar?' />
-                <select value={category} onChange={e => setCategorySearch(e.target.value)} >
-                    <option className='option'  selected value={''}>Todos</option>
+                <select value={category} defaultValue={category} onChange={e => setCategorySearch(e.target.value)} >
+                    <option className='option' selected value={''}>Todos</option>
                     <option className='option' value={'salary'}>Sálario</option>
                     <option className='option' selected value={'food'}>Alimentação</option>
                     <option className='option' value={'rent'}>Aluguel</option>

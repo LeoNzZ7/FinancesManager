@@ -46,7 +46,7 @@ export const App = () => {
         } else {
           incomeCount += filteredList[i].value;
         } 
-      } else if (searchItem.title === '' && searchItem.category === '') {
+      } else if (searchItem.category === '' && searchItem.category === '') {
         if (categories[filteredList[i].category].expense) {
           expenseCount += filteredList[i].value;
         } else {
@@ -54,16 +54,11 @@ export const App = () => {
         } 
       }
     }
+    
+    SetIncome(incomeCount);
+    SetExpense(expenseCount);
 
   }, [filteredList, searchItem.title, searchItem.category]);
-
-  /*
-     if (categories[filteredList[i].category].expense) {
-        expenseCount += filteredList[i].value;
-      } else {
-        incomeCount += filteredList[i].value;
-      } 
-  */
 
   const handleMonthChange = (newMonth: string) => {
     setCurrentMonth(newMonth);

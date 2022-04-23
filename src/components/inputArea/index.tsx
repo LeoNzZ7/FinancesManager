@@ -31,7 +31,7 @@ export const InputArea = ({onAdd}: Props) => {
             <input type='text' value={title} onChange={e => setTitle(e.target.value)} className='inputText' placeholder='Digite o nome da operação que você deseja adicionar' />
             <input type='text' onChange={e => setValue(e.target.value)} className='inputNumber' placeholder='Valor da operação' />
             <input type='date' className='inputDate' value={date} onChange={e => setDate(e.target.value)} />
-            <select value={category} onChange={e => setCategory(e.target.value)} >
+            <select value={category} defaultValue={category} onChange={e => setCategory(e.target.value)} >
                 <option className='option' selected hidden value={''}>Categoria</option>
                 <option className='option' value={'salary'}>Sálario</option>
                 <option className='option' selected value={'food'}>Alimentação</option>

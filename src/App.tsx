@@ -2,11 +2,11 @@ import * as c from './app.styles'
 import { TableArea } from './components/tableArea';
 import { InfoArea } from './components/infoArea';
 import { InputArea } from './components/inputArea';
-import type { Category, Item } from './types/types';
+import type { Item } from './types/types';
 import { categories, items } from './data/data';
 import { useState, useEffect } from 'react';
 import { getCurrentMonth, FilterListByMonth } from './helpers/dateFilter';
-
+import { ThemeSwitcher } from './components/themeSwitcher';
 
 export const App = () => {  
   const [list, setList] = useState<Item[]>(items);
@@ -48,7 +48,10 @@ export const App = () => {
   return (
     <c.Container>
       <c.Header>
-        <c.HeaderText>Gestor de Finanças</c.HeaderText>
+        <c.HeaderArea>
+          <c.HeaderText>Gestor de Finanças</c.HeaderText>
+          <ThemeSwitcher />
+        </c.HeaderArea>
       </c.Header>
       <c.Body>
         <InfoArea income={income} expense={expense} onMonthChange={handleMonthChange} currentMonth={currentMonth} />

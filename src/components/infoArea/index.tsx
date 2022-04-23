@@ -1,6 +1,8 @@
 import  * as c from './styles';
-import {formatCurrentMonth} from '../../helpers/dateFilter'
-import { ResumeItem } from '../resumeItem'
+import {formatCurrentMonth} from '../../helpers/dateFilter';
+import { ResumeItem } from '../resumeItem';
+import { Item } from '../../types/types';
+import { useAppSelector } from '../../redux/hooks/useAppSelector';
 
 type Props = {
     currentMonth: string;
@@ -9,7 +11,9 @@ type Props = {
     expense: number;
 }
 
-export const InfoArea = ({currentMonth, onMonthChange, income, expense}: Props) => {
+export const InfoArea = ({currentMonth, onMonthChange, income, expense,}: Props) => {
+    const searchItem = useAppSelector(state => state.searchItem);
+
     const handlePrevMonth = () => {
         let [year, month] = currentMonth.split('-');
         let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
@@ -38,3 +42,4 @@ export const InfoArea = ({currentMonth, onMonthChange, income, expense}: Props) 
         </c.Container>
     )
 }
+

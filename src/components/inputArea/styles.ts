@@ -51,7 +51,7 @@ export const Container = styled.div`
     };
 
     .option {
-        background-color: #000;
+        background-color: #fff;
     }
 
     button {

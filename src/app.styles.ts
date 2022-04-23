@@ -8,7 +8,7 @@ export const Container = styled.div<{theme: string}>`
     footer {
         text-align: center;
         font-weight: bold;
-        padding-top: 10px;
+        padding-top: 35px;
 
         a {
             color: #fff;
@@ -52,7 +52,7 @@ export const HeaderText = styled.h1`
 export const Body = styled.div`
     max-width: 980px;
     margin: auto;
-    margin-bottom: 50px;
+    margin-bottom: 22px;
 `;
 
 

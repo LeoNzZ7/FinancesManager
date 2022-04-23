@@ -4,6 +4,21 @@ export const Container = styled.div<{theme: string}>`
     background-color:  ${props => props.theme.status === 'light' ? '#0089ff' : '#000'};
     height: 100%;
     padding-bottom: 57px;
+
+    footer {
+        text-align: center;
+        font-weight: bold;
+        padding-top: 10px;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            } 
+        }
+    } 
 `;
 
 export const Header = styled.div<{theme: string}>`

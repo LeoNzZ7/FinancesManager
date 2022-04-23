@@ -93,6 +93,7 @@ export const App = () => {
         <InputArea onAdd={handleAddItem} />
         <TableArea deleteItem={handleDeleteItem} list={filteredList} />
       </c.Body>
+      <footer><a href='https://github.com/LeoNzZ7'>Desenvolvido por Leonardo Nunes Martinha</a></footer>
     </c.Container>
   )
 }

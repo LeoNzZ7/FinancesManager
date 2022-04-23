@@ -2,9 +2,8 @@ import styled from 'styled-components'
 
 export const Container = styled.div<{theme: string}>`
     background-color:  ${props => props.theme.status === 'light' ? '#0089ff' : '#000'};
-    min-height: 900px;
     height: 100%;
-    max-height: 1000vh;
+    padding-bottom: 57px;
 `;
 
 export const Header = styled.div<{theme: string}>`

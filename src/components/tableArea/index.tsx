@@ -32,12 +32,14 @@ export const TableArea = ({list}: Props ) => {
                 <select value={category} onChange={e => setCategorySearch(e.target.value)} >
                     <option className='option'  selected value={''}>Todos</option>
                     <option className='option' value={'salary'}>Sálario</option>
-                    <option className='option' selected value={''}>Alimentação</option>
-                    <option className='option' value={'salary'}>Roupas</option>
-                    <option className='option' selected value={''}>Lucros e dividendos</option>
-                    <option className='option' value={'salary'}>Veiculos e manutenção</option>
-                    <option className='option' selected value={''}>Serviços</option>
-                    <option className='option' value={'salary'}>Impostos e tributos</option>
+                    <option className='option' selected value={'food'}>Alimentação</option>
+                    <option className='option' value={'rent'}>Aluguel</option>
+                    <option className='option' selected value={'cloats'}>Roupas</option>
+                    <option className='option' value={'profit'}>Lucros e dividendos</option>
+                    <option className='option' selected value={'velhice'}>Veiculos</option>
+                    <option className='option' value={'tax'}>Impostos e tributos</option>
+                    <option className='option' selected value={'investments'}>Investimentos</option>
+                    <option className='option' value={'services'}>Serviços</option>
                 </select>   
             </c.SearchArea>
             <c.Table>

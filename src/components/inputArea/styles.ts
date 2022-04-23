@@ -18,6 +18,7 @@ export const Container = styled.div<{theme: string}>`
         border-left: 0;
         outline: 0;
         background-color: transparent;
+        color: ${props => props.theme.status === 'light' ? '#000' : '#fff'};
 
         ::placeholder {
             color: ${props => props.theme.status === 'light' ? '#000' : '#fff'};
@@ -40,7 +41,6 @@ export const Container = styled.div<{theme: string}>`
         border: 1px solid #ccc;
         width: 30%;
         border-right: 0;
-        color: ${props => props.theme.status === 'light' ? '#000' : '#fff'};
     }
 
     select {

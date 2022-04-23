@@ -6,7 +6,7 @@ import { useAppSelector } from '../../redux/hooks/useAppSelector';
 
 type Props = {
     item: Item;
-    handleDeleteItem: (str: string) => void;
+    handleDeleteItem: (itemTilte: string) => void;
 }
 
 export const TableItem = ({ item, handleDeleteItem }: Props) => {

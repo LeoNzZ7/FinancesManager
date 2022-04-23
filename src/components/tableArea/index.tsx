@@ -8,7 +8,7 @@ import { setTitle, setCategory } from '../../redux/reducers/searchReducer';
 
 type Props = {
     list: Item[];
-    deleteItem: (str: string) => void;
+    deleteItem: (title: string) => void;
 }
 
 export const TableArea = ({ list, deleteItem }: Props ) => {

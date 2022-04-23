@@ -52,7 +52,19 @@ export const App = () => {
         } else {
           incomeCount += filteredList[i].value;
         }  
-      }
+      } else if (searchItem.category === '') {
+        if (categories[filteredList[i].category].expense) {
+          expenseCount += filteredList[i].value;
+        } else {
+          incomeCount += filteredList[i].value;
+        }  
+      } else if (searchItem.title === '') {
+        if (categories[filteredList[i].category].expense) {
+          expenseCount += filteredList[i].value;
+        } else {
+          incomeCount += filteredList[i].value;
+        }  
+      } 
     }
     
     SetIncome(incomeCount);

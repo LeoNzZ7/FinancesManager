@@ -37,9 +37,9 @@ export const SearchArea = styled.div<{theme: string}>`
         border-radius: 15px 0px 0px 15px;
         border-right: 0;
         background-color: transparent;
-        ${props => props.theme.status === 'light' ? '#000' : '#fff'}
+        color: ${props => props.theme.status === 'light' ? '#000' : '#fff'};
 
-        ::placeholder {
+        &::placeholder {
             color: ${props => props.theme.status === 'light' ? '#000' : '#fff'};
         }
     }

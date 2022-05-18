@@ -1,7 +1,7 @@
 # 💸 Projeto FinanceManeger
 
 # 📃 Sobre o projeto
-O projeto FinanceManager é um web app que o ajudar a fazer o gerenciamento e o planejamento de suas finanças pessoais
+O projeto Finances Manager é um web app que o ajudar a fazer o gerenciamento e o planejamento de suas finanças pessoais
 
 # 💻 Layout do projeto
 ![financeManegerGIF.gif](https://github.com/LeoNzZ7/FinancesManeger/blob/master/public/financeManegerGIF.gif)

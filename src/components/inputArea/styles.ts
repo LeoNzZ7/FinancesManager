@@ -26,25 +26,25 @@ export const Container = styled.div<{theme: string}>`
     };
 
     .inputText {
-        border: 1px solid #ccc;
-        border-radius: 15px 0px 0px 15px;
+        border: 2px solid #ccc;
+        border-radius: 20px 0px 0px 20px;
         border-right: 0;
     };
 
     .inputNumber {
-        border: 1px solid #ccc;
+        border: 2px solid #ccc;
         width: 30%;
         border-right: 0;
     }
 
     .inputDate {
-        border: 1px solid #ccc;
+        border: 2px solid #ccc;
         width: 30%;
         border-right: 0;
     }
 
     select {
-        border: 1px solid #ccc;
+        border: 2px solid #ccc;
         width: 30%;
         height: auto;
         padding: 10px
@@ -64,9 +64,9 @@ export const Container = styled.div<{theme: string}>`
         height: auto;
         padding: 10px;
         color: #fff;
-        border: 1px solid #aaa;
+        border: 2px solid #ccc;
         border-left 0;
-        border-radius: 0px 15px 15px 0px;
+        border-radius: 0px 20px 20px 0px;
         font-weight: bold;
         background-color: #0089ff;
         outline: 0;

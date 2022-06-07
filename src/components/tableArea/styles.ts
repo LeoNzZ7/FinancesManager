@@ -33,7 +33,7 @@ export const SearchArea = styled.div<{theme: string}>`
         height: auto;
         padding: 10px;
         outline: 0;
-        border: 1px solid #ccc;
+        border: 2px solid #ccc;
         border-radius: 15px 0px 0px 15px;
         border-right: 0;
         background-color: transparent;
@@ -45,7 +45,7 @@ export const SearchArea = styled.div<{theme: string}>`
     }
 
     select {
-        border: 1px solid #ccc;
+        border: 2px solid #ccc;
         width: 30%;
         height: auto;
         padding: 10px

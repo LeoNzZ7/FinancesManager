@@ -73,7 +73,7 @@ export const App = () => {
   const handleDeleteItem = (title: string) => {
 
     let newlist: Item[] = list.filter((item: Item) => {
-      if (item.title != title)
+      if (item.title !== title)
         return item;
     });
 

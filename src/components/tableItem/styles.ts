@@ -1,15 +1,21 @@
 import styled from 'styled-components'
 
-export const TableLine = styled.tr`
-
-`;
+export const TableLine = styled.tr``;
 
 export const TableColumn = styled.td`
-    padding: 10px 0px;
+    padding: 10px 5px;
 
-    .removeItem {
-        width: 21px;
+    &:last-child {
+        width: 25px;
+    }
+
+    .icon {
         cursor: pointer;
+        display: flex;
+        
+        &:hover {
+            opacity: .85;
+        }
     }
 `;
 

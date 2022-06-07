@@ -12,7 +12,6 @@ type Props = {
 }
 
 export const TableArea = ({ list, deleteItem }: Props ) => {
-    const searchItem = useAppSelector(state => state.searchItem);
     const theme = useAppSelector(state => state.theme)
     const dispatch = useDispatch();
 
@@ -27,7 +26,7 @@ export const TableArea = ({ list, deleteItem }: Props ) => {
     return (
         <c.Container theme={theme} >
             <c.SearchArea  theme={theme} >
-                <input type='text' value={title} onChange={e => setTitleSearch(e.target.value)} placeholder='Qual o nome da operçao que deseja buscar?' />
+                <input type='search' value={title} onChange={e => setTitleSearch(e.target.value)} placeholder='Qual o nome da operçao que deseja buscar?' />
                 <select value={category} defaultValue={category} onChange={e => setCategorySearch(e.target.value)} >
                     <option className='option' selected value={''}>Todos</option>
                     <option className='option' value={'salary'}>Sálario</option>

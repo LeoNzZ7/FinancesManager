@@ -31,7 +31,7 @@ export const InputArea = ({onAdd}: Props) => {
     
     return (
         <c.Container theme={theme} >
-            <input type='text' value={title} onChange={e => setTitle(e.target.value)} className='inputText' placeholder='Digite o nome da operação que você deseja adicionar' />
+            <input type='search' value={title} onChange={e => setTitle(e.target.value)} className='inputText' placeholder='Digite o nome da operação que você deseja adicionar' />
             <input type='text' value={value} onChange={e => setValue(e.target.value)} className='inputNumber' placeholder='Valor da operação' />
             <input type='date' className='inputDate' value={date} onChange={e => setDate(e.target.value)} />
             <select value={category} defaultValue={category} onChange={e => setCategory(e.target.value)} >

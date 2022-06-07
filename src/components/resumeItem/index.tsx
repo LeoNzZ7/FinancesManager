@@ -1,5 +1,4 @@
 import * as c from './styles'
-import { useAppSelector } from '../../redux/hooks/useAppSelector';
 
 type Props = {
     title: string;

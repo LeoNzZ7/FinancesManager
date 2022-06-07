@@ -1,8 +1,8 @@
 import  * as c from './styles';
 import {formatCurrentMonth} from '../../helpers/dateFilter';
 import { ResumeItem } from '../resumeItem';
-import { Item } from '../../types/types';
 import { useAppSelector } from '../../redux/hooks/useAppSelector';
+import { ArrowCircleLeft, ArrowCircleRight } from 'phosphor-react';
 
 type Props = {
     currentMonth: string;
@@ -12,7 +12,6 @@ type Props = {
 }
 
 export const InfoArea = ({currentMonth, onMonthChange, income, expense,}: Props) => {
-    const searchItem = useAppSelector(state => state.searchItem);
     const theme = useAppSelector(state => state.theme);
 
     const handlePrevMonth = () => {
@@ -31,9 +30,13 @@ export const InfoArea = ({currentMonth, onMonthChange, income, expense,}: Props)
     return (
         <c.Container theme={theme}>
             <c.MonthArea theme={theme}>
-                <c.MonthArrow onClick={handlePrevMonth} >⬅️</c.MonthArrow>
+                <c.MonthArrow onClick={handlePrevMonth}>
+                    <ArrowCircleLeft size={25} weight="bold" />
+                </c.MonthArrow>
                 <c.MonthTitle>{formatCurrentMonth(currentMonth)}</c.MonthTitle>
-                <c.MonthArrow onClick={handleNextMonth} >➡️</c.MonthArrow>
+                <c.MonthArrow onClick={handleNextMonth}>
+                    <ArrowCircleRight size={25} weight="bold" />
+                </c.MonthArrow>
             </c.MonthArea>
             <c.ResumeArea>
                 <ResumeItem title='Receitas' color={'#008000'} value={income} />

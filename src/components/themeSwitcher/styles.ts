@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const ThemeSwitcher = styled.div<{theme: string}>`
     display: flex;
     align-items: center;
-    width: 55px;
-    height: 25px;
+    width: 60px;
+    height: 30px;
     border: 1px solid #ddd;
     border-radius: 15px;
     cursor: pointer;
